@@ -1,0 +1,30 @@
+* {
+    position: relative;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-style: none;
+}
+
+a,
+button {
+    cursor: pointer;
+}
+
+
+
+.content {
+    width: 100%;
+    max-width: 1440px;
+    height: 100%;
+}
+
+@font-face {
+    font-family: "1";
+    src: url(./assets/fonts/Bitcount_Single/BitcountSingle-VariableFont_CRSV\,ELSH\,ELXP\,slnt\,wght.ttf);
+}
+
+@font-face {
+    font-family: "2";
+    src: url(./assets/fonts/Edu_QLD_Hand/EduQLDHand-VariableFont_wght.ttf);
+}
