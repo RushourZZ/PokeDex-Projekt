@@ -20,15 +20,21 @@ function renderPokemonDetailTemplate(data) {
     return /*html*/ `
         <div class="detail-header" style="background: ${data.gradient}">
             <span class="detail-id">#${data.formattedId}</span>
+            <img src="${data.imageUrl}" alt="${data.name}" class="detail-image" />
             <h2 class="detail-name">${data.name}</h2>
             <div class="pokemon-types">${data.typesBadgesHtml}</div>
         </div>
         <div class="detail-body">
-            <img src="${data.imageUrl}" alt="${data.name}" class="detail-image" />
-            <div class="detail-info">
-                ${data.basicInfoHtml}
-                ${data.abilitiesHtml}
-                ${data.statsHtml}
+            ${data.basicInfoHtml}
+            <div class="tab-menu">
+                <button class="tab-btn active" data-tab="abilities" onclick="switchTab('abilities')">Abilities</button>
+                <button class="tab-btn" data-tab="stats" onclick="switchTab('stats')">Stats</button>
+                <button class="tab-btn" data-tab="evolution" onclick="switchTab('evolution')">Evolution</button>
+            </div>
+            <div class="tab-content">
+                <div id="tab-abilities" class="tab-panel active">${data.abilitiesHtml}</div>
+                <div id="tab-stats" class="tab-panel">${data.statsHtml}</div>
+                <div id="tab-evolution" class="tab-panel"><p class="tab-placeholder">Loading...</p></div>
             </div>
         </div>
     `;
@@ -36,36 +42,23 @@ function renderPokemonDetailTemplate(data) {
 
 function renderBasicInfoTemplate(data) {
     return /*html*/ `
-        <div class="info-section">
-            <h3>Basic Info</h3>
-            <div class="info-grid">
-                <div class="info-item"><span class="label">Height</span><span class="value">${data.height} m</span></div>
-                <div class="info-item"><span class="label">Weight</span><span class="value">${data.weight} kg</span></div>
-                <div class="info-item"><span class="label">Base Experience</span><span class="value">${data.baseExperience}</span></div>
-            </div>
+        <div class="info-grid basic-info">
+            <div class="info-item"><span class="label">Height</span><span class="value">${data.height} m</span></div>
+            <div class="info-item"><span class="label">Weight</span><span class="value">${data.weight} kg</span></div>
+            <div class="info-item"><span class="label">Base XP</span><span class="value">${data.baseExperience}</span></div>
         </div>
     `;
 }
 
 function renderAbilitiesTemplate(abilitiesText) {
-    return /*html*/ `
-        <div class="info-section">
-            <h3>Abilities</h3>
-            <p class="abilities-list">${abilitiesText}</p>
-        </div>
-    `;
+    return /*html*/ `<p class="abilities-list">${abilitiesText}</p>`;
 }
 //#endregion
 
 //#region Template - Base Stats
 function renderBaseStatsTemplate(statsRowsHtml) {
     return /*html*/ `
-        <div class="info-section">
-            <h3>Base Stats</h3>
-            <div class="stats-container">
-                ${statsRowsHtml}
-            </div>
-        </div>
+        <div class="stats-container">${statsRowsHtml}</div>
     `;
 }
 
@@ -85,12 +78,7 @@ function renderStatBarTemplate(data) {
 //#region Template - Evolution Chain
 function renderEvolutionTemplate(stagesHtml) {
     return /*html*/ `
-        <div class="info-section">
-            <h3>Evolution</h3>
-            <div class="evolution-chain">
-                ${stagesHtml}
-            </div>
-        </div>
+        <div class="evolution-chain">${stagesHtml}</div>
     `;
 }
 

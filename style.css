@@ -45,6 +45,11 @@ body {
     }
 }
 
+body.modal-open {
+    position: fixed;
+    width: 100%;
+}
+
 .pokemon-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -54,7 +59,11 @@ body {
 }
 
 .pokemon-card {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(240, 240, 240, 0.9));
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.95),
+        rgba(240, 240, 240, 0.9)
+    );
     border-radius: 20px;
     padding: 20px;
     text-align: center;
@@ -201,55 +210,123 @@ body {
 }
 
 .pokemon-card.fire {
-    background: linear-gradient(145deg, rgba(255, 200, 150, 0.95), rgba(255, 160, 100, 0.9));
+    background: linear-gradient(
+        145deg,
+        rgba(255, 200, 150, 0.95),
+        rgba(255, 160, 100, 0.9)
+    );
 }
 .pokemon-card.water {
-    background: linear-gradient(145deg, rgba(180, 210, 255, 0.95), rgba(130, 180, 255, 0.9));
+    background: linear-gradient(
+        145deg,
+        rgba(180, 210, 255, 0.95),
+        rgba(130, 180, 255, 0.9)
+    );
 }
 .pokemon-card.grass {
-    background: linear-gradient(145deg, rgba(180, 230, 180, 0.95), rgba(140, 210, 140, 0.9));
+    background: linear-gradient(
+        145deg,
+        rgba(180, 230, 180, 0.95),
+        rgba(140, 210, 140, 0.9)
+    );
 }
 .pokemon-card.electric {
-    background: linear-gradient(145deg, rgba(255, 245, 180, 0.95), rgba(255, 230, 130, 0.9));
+    background: linear-gradient(
+        145deg,
+        rgba(255, 245, 180, 0.95),
+        rgba(255, 230, 130, 0.9)
+    );
 }
 .pokemon-card.psychic {
-    background: linear-gradient(145deg, rgba(255, 200, 220, 0.95), rgba(255, 160, 190, 0.9));
+    background: linear-gradient(
+        145deg,
+        rgba(255, 200, 220, 0.95),
+        rgba(255, 160, 190, 0.9)
+    );
 }
 .pokemon-card.ice {
-    background: linear-gradient(145deg, rgba(200, 240, 255, 0.95), rgba(160, 220, 240, 0.9));
+    background: linear-gradient(
+        145deg,
+        rgba(200, 240, 255, 0.95),
+        rgba(160, 220, 240, 0.9)
+    );
 }
 .pokemon-card.dragon {
-    background: linear-gradient(145deg, rgba(180, 160, 255, 0.95), rgba(140, 120, 230, 0.9));
+    background: linear-gradient(
+        145deg,
+        rgba(180, 160, 255, 0.95),
+        rgba(140, 120, 230, 0.9)
+    );
 }
 .pokemon-card.dark {
-    background: linear-gradient(145deg, rgba(120, 100, 90, 0.95), rgba(90, 75, 70, 0.9));
+    background: linear-gradient(
+        145deg,
+        rgba(120, 100, 90, 0.95),
+        rgba(90, 75, 70, 0.9)
+    );
 }
 .pokemon-card.fairy {
-    background: linear-gradient(145deg, rgba(255, 200, 220, 0.95), rgba(250, 170, 200, 0.9));
+    background: linear-gradient(
+        145deg,
+        rgba(255, 200, 220, 0.95),
+        rgba(250, 170, 200, 0.9)
+    );
 }
 .pokemon-card.fighting {
-    background: linear-gradient(145deg, rgba(230, 160, 150, 0.95), rgba(210, 120, 110, 0.9));
+    background: linear-gradient(
+        145deg,
+        rgba(230, 160, 150, 0.95),
+        rgba(210, 120, 110, 0.9)
+    );
 }
 .pokemon-card.poison {
-    background: linear-gradient(145deg, rgba(210, 160, 210, 0.95), rgba(180, 120, 180, 0.9));
+    background: linear-gradient(
+        145deg,
+        rgba(210, 160, 210, 0.95),
+        rgba(180, 120, 180, 0.9)
+    );
 }
 .pokemon-card.ground {
-    background: linear-gradient(145deg, rgba(240, 220, 180, 0.95), rgba(220, 190, 140, 0.9));
+    background: linear-gradient(
+        145deg,
+        rgba(240, 220, 180, 0.95),
+        rgba(220, 190, 140, 0.9)
+    );
 }
 .pokemon-card.flying {
-    background: linear-gradient(145deg, rgba(200, 190, 255, 0.95), rgba(170, 160, 240, 0.9));
+    background: linear-gradient(
+        145deg,
+        rgba(200, 190, 255, 0.95),
+        rgba(170, 160, 240, 0.9)
+    );
 }
 .pokemon-card.bug {
-    background: linear-gradient(145deg, rgba(200, 210, 140, 0.95), rgba(175, 190, 110, 0.9));
+    background: linear-gradient(
+        145deg,
+        rgba(200, 210, 140, 0.95),
+        rgba(175, 190, 110, 0.9)
+    );
 }
 .pokemon-card.rock {
-    background: linear-gradient(145deg, rgba(210, 190, 140, 0.95), rgba(185, 165, 115, 0.9));
+    background: linear-gradient(
+        145deg,
+        rgba(210, 190, 140, 0.95),
+        rgba(185, 165, 115, 0.9)
+    );
 }
 .pokemon-card.ghost {
-    background: linear-gradient(145deg, rgba(160, 140, 190, 0.95), rgba(130, 110, 165, 0.9));
+    background: linear-gradient(
+        145deg,
+        rgba(160, 140, 190, 0.95),
+        rgba(130, 110, 165, 0.9)
+    );
 }
 .pokemon-card.steel {
-    background: linear-gradient(145deg, rgba(210, 210, 225, 0.95), rgba(185, 185, 205, 0.9));
+    background: linear-gradient(
+        145deg,
+        rgba(210, 210, 225, 0.95),
+        rgba(185, 185, 205, 0.9)
+    );
 }
 
 .modal {
@@ -268,6 +345,7 @@ body {
     transition:
         opacity 0.3s ease,
         visibility 0.3s ease;
+    padding: 20px;
 }
 
 .modal.active {
@@ -279,9 +357,10 @@ body {
     background: white;
     border-radius: 24px;
     max-width: 800px;
-    width: 90%;
-    max-height: 90vh;
-    overflow-y: auto;
+    width: 100%;
+    max-height: calc(100dvh - 40px);
+    display: flex;
+    flex-direction: column;
     position: relative;
     animation: modalSlideIn 0.3s ease;
 }
@@ -317,10 +396,19 @@ body {
 }
 
 .detail-header {
-    padding: 32px;
+    padding: 16px 32px;
     text-align: center;
     border-radius: 24px 24px 0 0;
-    background: linear-gradient(145deg, rgba(200, 200, 200, 0.95), rgba(170, 170, 170, 0.9));
+    background: linear-gradient(
+        145deg,
+        rgba(200, 200, 200, 0.95),
+        rgba(170, 170, 170, 0.9)
+    );
+    flex-shrink: 0;
+}
+
+.detail-header .pokemon-types {
+    margin: 4px 0 0;
 }
 
 .detail-header.fire {
@@ -386,42 +474,104 @@ body {
 
 .detail-name {
     font-family: "1";
-    font-size: clamp(1.75rem, 1.5rem + 1.5vw, 2.5rem);
+    font-size: clamp(1.25rem, 1rem + 1.25vw, 2rem);
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    margin: 8px 0 16px;
+    margin: 0 0 4px;
+}
+
+#modalBody {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
 }
 
 .detail-body {
     display: flex;
-    flex-wrap: wrap;
-    padding: 24px;
-    gap: 24px;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    padding: 16px;
+    gap: 12px;
+    font-family: "2";
 }
 
 .detail-image {
-    width: 250px;
-    height: 250px;
+    width: 140px;
+    height: 140px;
     object-fit: contain;
-    margin: 0 auto;
+    margin: 4px auto;
+    display: block;
 }
 
-.detail-info {
-    flex: 1;
-    font-family: "2";
-    min-width: 280px;
-}
-
-.info-section {
-    margin-bottom: 24px;
-}
-
-.info-section h3 {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 12px;
-    padding-bottom: 8px;
+.basic-info {
+    grid-template-columns: repeat(3, 1fr);
+    padding-bottom: 12px;
     border-bottom: 2px solid #eee;
+}
+
+.basic-info .info-item {
+    text-align: center;
+}
+
+.tab-menu {
+    display: flex;
+    flex-shrink: 0;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px 8px;
+    font-family: "2";
+    font-size: 16px;
+    font-weight: 600;
+    background: none;
+    border: none;
+    border-bottom: 3px solid #eee;
+    cursor: pointer;
+    color: #999;
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.tab-btn.active {
+    color: #333;
+    border-bottom-color: #3b82f6;
+}
+
+.tab-btn:hover {
+    color: #555;
+}
+
+.tab-content {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+}
+
+.tab-panel {
+    display: none;
+    width: 100%;
+    padding-top: 12px;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.tab-panel::-webkit-scrollbar {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+.tab-placeholder {
+    font-size: 16px;
+    color: #999;
+    text-align: center;
+    padding: 24px 0;
 }
 
 .info-grid {
@@ -496,8 +646,9 @@ body {
 .modal-navigation {
     display: flex;
     justify-content: space-between;
-    padding: 16px 24px 24px;
+    padding: 12px 16px 16px;
     gap: 16px;
+    flex-shrink: 0;
 }
 
 .nav-btn {
@@ -682,13 +833,15 @@ footer {
     section {
         display: flex;
         justify-content: center;
+        align-items: center;
         width: 100%;
 
         h2 {
             font-family: "1";
-            font-size: 24px;
+            font-size: clamp(1.5rem, 1.0714rem + 2.1429vw, 3rem);
             margin-bottom: 16px;
             color: #f6c10c;
+            text-align: center;
         }
     }
 }
@@ -710,18 +863,115 @@ footer {
         width: 100%;
     }
 
-    .detail-body {
-        flex-direction: column;
-        align-items: center;
+    .stat-name {
+        width: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal {
+        padding: 12px;
+    }
+
+    .modal-content {
+        max-height: calc(100dvh - 24px);
+        border-radius: 16px;
+    }
+
+    .detail-header {
+        padding: 12px 16px;
+        border-radius: 16px 16px 0 0;
     }
 
     .detail-image {
-        width: 200px;
-        height: 200px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .detail-body {
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .modal-navigation {
+        padding: 10px 12px 12px;
+    }
+
+    .nav-btn {
+        padding: 10px 16px;
+    }
+
+    .evo-image {
+        width: 56px;
+        height: 56px;
+        padding: 4px;
+    }
+
+    .evo-arrow {
+        font-size: 20px;
+    }
+
+    
+}
+
+@media (max-width: 360px) {
+    .modal {
+        padding: 8px;
+    }
+
+    .modal-content {
+        max-height: calc(100dvh - 16px);
+        border-radius: 12px;
+    }
+
+    .detail-header {
+        padding: 8px 12px;
+        border-radius: 12px 12px 0 0;
+    }
+
+    .detail-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .detail-body {
+        padding: 10px;
+        gap: 8px;
     }
 
     .stat-name {
-        width: 80px;
-        font-size: 16px;
+        width: 56px;
     }
+
+    .stat-bar-container {
+        max-width: 96px;
+    }
+
+    .info-grid {
+        gap: 6px;
+    }
+
+    .evolution-chain {
+        gap: 4px;
+    }
+
+    .evo-image {
+        width: 44px;
+        height: 44px;
+    }
+
+    .modal-navigation {
+        padding: 8px 10px 10px;
+        gap: 8px;
+    }
+
+    .nav-btn {
+        padding: 8px 12px;
+    }
+
+    .tab-btn {
+        padding: 8px 4px;
+    }
+
+    
 }

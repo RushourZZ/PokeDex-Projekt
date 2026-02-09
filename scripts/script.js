@@ -171,7 +171,7 @@ async function loadEvolutionChain(pokemonId) {
         const evoData = await fetchEvolutionData(speciesData.evolution_chain.url);
         renderEvolutionChain(evoData.chain, pokemonId);
     } catch (error) {
-        console.log("Evolution chain not available");
+        document.getElementById("tab-evolution").innerHTML = '<p class="tab-placeholder">Not available</p>';
     }
 }
 
@@ -270,16 +270,33 @@ function openPokemonDetail(pokemonId) {
     currentPokemonIndex = list.findIndex(p => p.id === pokemonId);
     renderPokemonDetail();
     document.getElementById("pokemonModal").classList.add("active");
-    document.body.style.overflowY = "scroll";
+    lockBodyScroll();
 }
 
 function closeModal() {
     document.getElementById("pokemonModal").classList.remove("active");
-    document.body.style.overflowY = "";
+    unlockBodyScroll();
+}
+
+function lockBodyScroll() {
+    savedScrollY = window.scrollY;
+    document.body.style.top = `-${savedScrollY}px`;
+    document.body.classList.add("modal-open");
+}
+
+function unlockBodyScroll() {
+    document.body.classList.remove("modal-open");
+    document.body.style.top = "";
+    window.scrollTo(0, savedScrollY);
 }
 
 function closeModalOnBackdrop(event) {
     if (event.target.id === "pokemonModal") closeModal();
+}
+
+function switchTab(tabName) {
+    document.querySelectorAll(".tab-btn").forEach(b => b.classList.toggle("active", b.dataset.tab === tabName));
+    document.querySelectorAll(".tab-panel").forEach(p => p.classList.toggle("active", p.id === `tab-${tabName}`));
 }
 //#endregion
 
@@ -319,9 +336,12 @@ function updateNavigationButtons() {
 //#region Evolution Chain - Processing
 function renderEvolutionChain(chain, pokemonId) {
     const evolutions = findEvolutionPath(chain, pokemonId) || extractDefaultPath(chain);
-    if (evolutions.length <= 1) return;
-    const container = document.querySelector(".detail-info");
-    container.innerHTML += renderEvolutionTemplate(buildEvolutionStagesHtml(evolutions));
+    const container = document.getElementById("tab-evolution");
+    if (evolutions.length <= 1) {
+        container.innerHTML = '<p class="tab-placeholder">No evolution chain</p>';
+        return;
+    }
+    container.innerHTML = renderEvolutionTemplate(buildEvolutionStagesHtml(evolutions));
 }
 
 function findEvolutionPath(chain, targetId) {

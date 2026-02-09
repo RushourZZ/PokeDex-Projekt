@@ -14,6 +14,7 @@ let currentOffset = 0;
 let isLoading = false;
 let currentPokemonIndex = 0;
 let currentSearchTerm = "";
+let savedScrollY = 0;
 //#endregion
 
 //#region Constants - Type Colors
