@@ -811,7 +811,7 @@ body.modal-open {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    
 }
 
 .evo-image {
@@ -984,7 +984,7 @@ footer {
     }
 
     .stats-container {
-        gap: 8px;
+        gap: 4px;
     }
 
     .info-grid {
@@ -993,7 +993,7 @@ footer {
     }
 
     .evolution-chain {
-        gap: 4px;
+        gap: 0;
     }
 
     .evo-image {
