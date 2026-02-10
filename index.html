@@ -1,14 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>PokeDex</title>
-        <link
-            rel="shortcut icon"
-            href="./assets/logo/pokemon-1635610_640.png"
-            type="image/x-icon"
-        />
+        <link rel="shortcut icon" href="./assets/logo/pokemon-1635610_640.png" type="image/x-icon" />
         <link rel="stylesheet" href="standard.css" />
         <link rel="stylesheet" href="style.css" />
         <script src="./scripts/data.js" defer></script>
@@ -27,51 +23,24 @@
         <main>
             <section class="content">
                 <div class="search-container">
-                    <input
-                        type="text"
-                        id="searchInput"
-                        placeholder="Min. 3 characters..."
-                        onkeydown="handleSearchKeydown(event)"
-                    />
-                    <button class="search-btn" onclick="executeSearch()">
-                        Search
-                    </button>
+                    <input type="text" id="searchInput" placeholder="Min. 3 characters..." onkeydown="handleSearchKeydown(event)" />
+
+                    <button class="search-btn" onclick="executeSearch()">Search</button>
+                    <button class="clear-btn" onclick="resetSearch()">Clear</button>
                 </div>
                 <div id="pokemonContainer" class="pokemon-grid"></div>
                 <p id="noResults" class="no-results">No Pokémon found</p>
-                <button
-                    id="loadMoreBtn"
-                    class="load-more-btn"
-                    onclick="loadPokemon()"
-                >
-                    Load 20 more Pokémon
-                </button>
+                <button id="loadMoreBtn" class="load-more-btn" onclick="loadPokemon()">Load 20 more Pokémon</button>
             </section>
         </main>
 
-        <div
-            id="pokemonModal"
-            class="modal"
-            onclick="closeModalOnBackdrop(event)"
-        >
+        <div id="pokemonModal" class="modal" onclick="closeModalOnBackdrop(event)">
             <div class="modal-content" onclick="event.stopPropagation()">
                 <button class="modal-close" onclick="closeModal()">✕</button>
                 <div id="modalBody"></div>
                 <div class="modal-navigation">
-                    <button
-                        class="nav-btn"
-                        id="prevBtn"
-                        onclick="showPreviousPokemon()"
-                    >
-                        ← Previous
-                    </button>
-                    <button
-                        class="nav-btn"
-                        id="nextBtn"
-                        onclick="showNextPokemon()"
-                    >
-                        Next →
-                    </button>
+                    <button class="nav-btn" id="prevBtn" onclick="showPreviousPokemon()">← Previous</button>
+                    <button class="nav-btn" id="nextBtn" onclick="showNextPokemon()">Next →</button>
                 </div>
             </div>
         </div>

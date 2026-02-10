@@ -221,9 +221,10 @@ function renderFilteredPokemon() {
 }
 //#endregion
 
-//#region Search
+//#region Search / Clear
 function handleSearchKeydown(event) {
     if (event.key === "Enter") executeSearch();
+    if (event.key === "Escape") resetSearch();
 }
 
 function executeSearch() {

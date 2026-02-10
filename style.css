@@ -698,6 +698,27 @@ body.modal-open {
     color: #999;
 }
 
+.clear-btn {
+    font-family: "2";
+    padding: 16px 28px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #ff9d5c, #f08030);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.clear-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 24px #f08030;
+}
+
 .search-btn {
     font-family: "2";
     padding: 16px 28px;
